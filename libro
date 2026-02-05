@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Biblioteca Online</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ===== Reset y Estilos Generales ===== */
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+    font-family:'Roboto', sans-serif;
+    line-height:1.6;
+    scroll-behavior: smooth;
+    color:#333;
+    background:#f5f5f5;
+}
+a { text-decoration:none; color:inherit; }
+
+/* ===== Cabecera con Parallax ===== */
+header {
+    height:100vh;
+    background: url('https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+    background-attachment: fixed;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+}
+header::after {
+    content:"";
+    position:absolute;
+    top:0; left:0; width:100%; height:100%;
+    background: rgba(0,0,0,0.5);
+}
+header h1 {
+    font-size:3.5em;
+    color:#fff;
+    margin-bottom:15px;
+    z-index:1;
+    animation:fadeInDown 1s ease forwards;
+}
+header p {
+    font-size:1.5em;
+    color:#fff;
+    margin-bottom:30px;
+    z-index:1;
+    animation:fadeInUp 1s ease forwards;
+}
+.btn {
+    padding:15px 35px;
+    background:#ff6f61;
+    border-radius:50px;
+    font-weight:bold;
+    transition:0.3s;
+    z-index:1;
+    display:inline-block;
+}
+.btn:hover { background:#ff3b2f; }
+
+/* ===== Secciones ===== */
+section {
+    padding:80px 20px;
+    max-width:1200px;
+    margin:0 auto;
+}
+section h2 {
+    font-size:2.8em;
+    text-align:center;
+    margin-bottom:30px;
+    color:#ff6f61;
+}
+section p {
+    font-size:1.1em;
+    text-align:center;
+    max-width:900px;
+    margin:0 auto 40px auto;
+    color:#555;
+}
+
+/* ===== Tarjetas de libros ===== */
+.books {
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+.book-card {
+    background:#fff;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+.book-card img {
+    width:150px;
+    height:auto;
+    margin-bottom:15px;
+    border-radius:5px;
+}
+.book-card h3 { margin-bottom:10px; font-size:1.2em; color:#333; }
+.book-card p { font-size:0.95em; color:#666; }
+.book-card a {
+    margin-top:15px;
+    padding:10px;
+    background:#ff6f61;
+    border-radius:50px;
+    font-weight:bold;
+    color:#fff;
+    width:100%;
+    transition:0.3s;
+    display:inline-block;
+}
+.book-card a:hover { background:#ff3b2f; }
+.book-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+
+/* ===== Redes sociales ===== */
+.socials {
+    text-align:center;
+    margin-top:30px;
+}
+.socials a {
+    margin:0 15px;
+    font-size:1.8em;
+    color:#555;
+    transition:0.3s;
+}
+.socials a:hover { color:#ff6f61; }
+
+/* ===== Footer ===== */
+footer {
+    text-align:center;
+    padding:20px;
+    background:#222;
+    color:#fff;
+    font-size:0.95em;
+}
+
+/* ===== Animaciones ===== */
+@keyframes fadeInDown { from { opacity:0; transform:translateY(-50px);} to {opacity:1; transform:translateY(0);} }
+@keyframes fadeInUp { from { opacity:0; transform:translateY(50px);} to {opacity:1; transform:translateY(0);} }
+
+/* ===== Responsive ===== */
+@media(max-width:768px){
+    header h1 { font-size:2.5em; }
+    header p { font-size:1.2em; }
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Mi Biblioteca Online</h1>
+<p>Libros, recomendaciones y recursos para todos los lectores</p>
+<a href="#contact" class="btn">Contáctame</a>
+</header>
+
+<section id="about">
+<h2>Sobre esta web</h2>
+<p>Bienvenido a nuestra biblioteca online. Aquí encontrarás libros seleccionados, descripciones y enlaces para leer o adquirir cada obra. Nuestra meta es ofrecer una experiencia agradable y moderna para los amantes de la lectura en Europa y todo el mundo.</p>
+</section>
+
+<section id="books">
+<h2>Libros Destacados</h2>
+<div class="books">
+
+<div class="book-card">
+<img src="https://images-na.ssl-images-amazon.com/images/I/51N-u8AsmdL._SX329_BO1,204,203,200_.jpg" alt="El Principito">
+<h3>El Principito</h3>
+<p>Un clásico que nos recuerda la importancia de la imaginación y la amistad.</p>
+<a href="https://www.amazon.es/El-principito-Antoine-Saint-Exupery/dp/8498387948" target="_blank">Ver Libro</a>
+</div>
+
+<div class="book-card">
+<img src="https://images-na.ssl-images-amazon.com/images/I/41+eK8zBwQL._SX331_BO1,204,203,200_.jpg" alt="Cien Años de Soledad">
+<h3>Cien Años de Soledad</h3>
+<p>La obra maestra de Gabriel García Márquez, explorando la magia y la historia de Macondo.</p>
+<a href="https://www.amazon.es/Cien-a%C3%B1os-soledad-Gabriel-Garc%C3%ADa/dp/8497592207" target="_blank">Ver Libro</a>
+</div>
+
+<div class="book-card">
+<img src="https://images-na.ssl-images-amazon.com/images/I/41J0DB0-kRL._SX331_BO1,204,203,200_.jpg" alt="1984">
+<h3>1984</h3>
+<p>La novela distópica de George Orwell que explora la vigilancia y el control del poder.</p>
+<a href="https://www.amazon.es/1984-George-Orwell/dp/8499890940" target="_blank">Ver Libro</a>
+</div>
+
+<div class="book-card">
+<img src="https://images-na.ssl-images-amazon.com/images/I/41rFROtSgZL._SX331_BO1,204,203,200_.jpg" alt="Orgullo y Prejuicio">
+<h3>Orgullo y Prejuicio</h3>
+<p>Clásico de Jane Austen que combina romance, crítica social y humor inglés.</p>
+<a href="https://www.amazon.es/Orgullo-prejuicio-Jane-Austen/dp/8491051312" target="_blank">Ver Libro</a>
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+<h2>Redes y Contacto</h2>
+<div class="socials">
+<a href="https://tuweb.com" target="_blank">🌐 Web</a>
+<a href="https://twitter.com/" target="_blank">🐦 Twitter</a>
+<a href="https://linkedin.com/" target="_blank">💼 LinkedIn</a>
+<a href="mailto:contacto@correo.com">✉️ Email</a>
+</div>
+</section>
+
+<footer>
+&copy; 2026 Mi Biblioteca Online. Todos los derechos reservados.
+</footer>
+
+</body>
+</html>
